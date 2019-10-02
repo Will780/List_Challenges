@@ -324,28 +324,35 @@ end
 # puts g_happy("This is missing a letter") #false
 # puts g_happy("This string is unhappy") #false
 
-def merge(list_1, list_2)
+def merge(list1, list2)
     i = 0
-    combined = list_1 + list_2
+    a = 0
+    combined = list1 + list2
     min = combined[0]
     sorted = []
-    while i < combined.size
-        if combined[i] < min
-            min = combined[i]
+    while a < combined.size
+        while i < combined.size
+            if combined[i] < min
+                min = combined[i]
+            end
+            i += 1
         end
-        i += 1
-    end
 
-    combined = combined - [min]
-    sorted += [min]
-    min = combined[0]
-    i = 0
-    if combined.size == 0
-        return sorted
+        combined = combined - [min]
+        sorted += [min]
+    
+        min = combined[0]
+        if combined.size == 0
+            return sorted
+        else
+            i = 0
+        end
     end
 end
 
+# doesn't sort duplicate numbers
+
 # puts merge([1, 2, 3], [4, 5, 6]) #1, 2, 3, 4, 5, 6
-puts merge([1, 3, 5], [2, 4, 6]) #1, 2, 3, 4, 5, 6
+# puts merge([1, 3, 5], [2, 4, 6]) #1, 2, 3, 4, 5, 6
 # puts merge([4, 5, 6], [1, 2, 3]) #1, 2, 3, 4, 5, 6
 # puts merge([1, 7, 9], [2, 3, 5]) #1, 2, 3, 5, 7, 9
