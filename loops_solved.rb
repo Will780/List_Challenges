@@ -232,17 +232,17 @@ end
 
 def middle_way(list1, list2)
     
-    if list1.size % 2 == 1
-        list_new1 = list1[list1.size / 2] # when odd
-    else
-        list_new1 = (list1[list1.size / 2] + list1[list1.size / 2 - 1]) / 2.0 # when even
-    end
+    # if list1.size % 2 == 1
+        list_new1 = list1[list1.size / 2] # when odd (always)
+    # else
+    #   list_new1 = (list1[list1.size / 2] + list1[list1.size / 2 - 1]) / 2.0 # when even
+    #end
 
-    if list2.size % 2 == 1
-        list_new2 = list2[list2.size / 2] # when odd
-    else
-        list_new2 = (list2[list2.size / 2] + list2[list2.size / 2 - 1]) / 2.0 # when even
-    end
+    # if list2.size % 2 == 1
+        list_new2 = list2[list2.size / 2] # when odd (always)
+    # else
+    #   list_new2 = (list2[list2.size / 2] + list2[list2.size / 2 - 1]) / 2.0 # when even
+    # end
 
     list_new = [list_new1, list_new2]
     return list_new
