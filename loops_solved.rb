@@ -189,7 +189,7 @@ def shift_left(list)
     return shiftedlist
 end
 
-# puts shift_left([6, 2, 5, 3])
+# puts shift_left([6, 2, 5, 3]) #[2, 5, 3, 6]
 
 def can_balance(list)
     i = 0
@@ -231,7 +231,6 @@ def count_code(str)
 end
 
 def middle_way(list1, list2)
-    
     # if list1.size % 2 == 1
         list_new1 = list1[list1.size / 2] # when odd (always)
     # else
@@ -248,27 +247,30 @@ def middle_way(list1, list2)
     return list_new
 end
 
+# puts middle_way([0, 1, 2, 3, 4], [5, 10, 11]) #[2, 10]
+
 def either_2_4(list)
     i = 0
-    tru_4 = 0
-    tru_2 = 0
+    four = false
+    two = false
+
     while i < list.size
-        if tru_4 == 1 && list[i] == 2 && list[i + 1] == 2
+        if four == true && list[i] == 2 && list[i + 1] == 2
             return false
-        elsif tru_4 == 0 && list[i] == 2 && list[i + 1] == 2
-            tru_2 = 1
+        elsif four == false && list[i] == 2 && list[i + 1] == 2
+            two = true
         end
         
-        if tru_2 == 1 && list[i] == 4 && list[i + 1] == 4
+        if two == true && list[i] == 4 && list[i + 1] == 4
             return false
-        elsif tru_2 == 0 && list[i] == 4 && list[i + 1] == 4
-            tru_4 = 1
+        elsif two == false && list[i] == 4 && list[i + 1] == 4
+            four = true
         end
 
         i += 1
     end
 
-    if tru_2 == 1 || tru_4 == 1
+    if two == true || four == true
         return true
     end
 
